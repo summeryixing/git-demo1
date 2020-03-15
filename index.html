@@ -11,5 +11,152 @@
     第三次修改
     第四次修改
     程序员B的上传新内容
+    <p></p>
+    <script>
+
+        // 获取当前时间
+        function getDate(){
+            var date = new Date();
+            var year = date.getFullYear();
+            var month = date.getMonth();
+            var dates = date.getDate();
+            var arr = ['星期日','星期一','星期二','星期三','星期四','星期五','星期六'];
+            var day = date.getDay();
+            return '今天是：' + year + '年' + month + '月' + dates + '日' + arr[day];
+        }
+        var p = document.querySelector('p');
+        p.innerText = getDate();
+        // 创建对象方法1  {}
+
+        var dog = {
+            uname: '可可',
+            type: '阿拉斯加犬',
+            age: '5岁',
+            color: '棕红色',
+            jn :function (){
+                console.log('汪汪汪');
+                console.log('演电影'); 
+            }
+        }
+            console.log(dog.uname);
+            console.log(dog.type);
+            console.log(dog.age);
+            console.log(dog.color);
+            dog.jn();
+            console.log('-----------------------------------');
+        // 创建对象方法2 new Object()
+        var mr = new Object();
+        mr.uname = '鸣人';
+        mr.sex = '男';
+        mr.age = 18;
+        mr.skill = function(){
+            console.log('影分身术');  
+        }
+            console.log(mr.uname);
+            console.log(mr.sex);
+            console.log(mr.age);
+            mr.skill();
+            console.log('-----------------------------------');
+        // 构造函数创造方法     
+        function wzry(name,type,blood){     //构造函数  相当于Java里面得一个类 class
+            this.name = name;
+            this.type = type;
+            this.blood = blood;
+            this.attack = function(attack){
+                console.log(attack); 
+            }
+        }
+        var lp = new wzry('廉颇','力量型','500血量');   //对象： var 对象 = new 构造函数名   相当于一个实例化对象
+            console.log(lp.name);
+            console.log(lp.type);
+            console.log(lp.blood);
+            lp.attack('近战');
+            console.log('-----------------------------------');
+            
+            var hy = new wzry('后裔','射手型','100血量');
+            console.log(hy.name);
+            console.log(hy.type);
+            console.log(hy.blood);
+            hy.attack('远战');
+            console.log('-----------------------------------');
+
+            // 遍历属性  for in
+            var ls = {
+                name: 'make老司机',
+                age: 34,
+                sex: '男',
+                skill:function(){
+
+                }
+            }
+                for(var k in ls){
+                    console.log(k);  // k输出变量名
+                    console.log(ls[k]);    //ls[k]输出变量值
+                    
+                    
+                }
+                console.log('------------作业1--------------------');
+                
+                // 作业
+                // 1.创建一个电脑对象， 颜色、重量、品牌、型号，看电影、打游戏和敲代码
+                var computer = {
+                    color: '粉色',
+                    weight: '1.1千克',
+                    brand: 'hp',
+                    model: '12455',
+                    method: function(){
+                        console.log('看电影');
+                        console.log('打游戏');
+                        console.log('敲代码');   
+                    }
+                }
+                console.log(computer.color);
+                console.log(computer.weight);
+                console.log(computer.brand);
+                console.log(computer.model);
+                computer.method();
+                // for(var k in computer){
+                //     console.log(k);
+                //     console.log(computer[k]); 
+                // }
+                console.log('-------------作业2----------------------');
+
+                
+                // 2.创建一个按钮对象，宽、高、背景颜色，点击行为
+                var button = new Object();
+                button.broad = 200;
+                button.tall = 500;
+                button.bgcolor = '粉色';
+                button.click = function(){
+                    console.log('点击');
+                }
+                console.log(button.broad);
+                console.log(button.tall);
+                console.log(button.bgcolor);
+                button.click();
+            console.log('--------------作业3---------------------');
+
+                // 3.创建一个车类型，重量、颜色、牌子， 载人，拉货，耕田
+                function car(type,weight,color,brand){
+                    this.type = type;
+                    this.weight = weight;
+                    this.color = color;
+                    this.brand = brand;
+                    this.yt = function(zy){
+                        console.log(zy);
+                    }
+                }
+                var jiaoche = new car('轿车','不知道','白色','宝马')
+                console.log(jiaoche.type);
+                console.log(jiaoche.weight);
+                console.log(jiaoche.color);
+                console.log(jiaoche.brand);
+                jiaoche.yt('载人,拉货，耕田');
+                
+            console.log('-----------------------------------');
+
+
+
+    </script>
 </body>
 </html>
